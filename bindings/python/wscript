@@ -14,7 +14,7 @@ from waflib.Errors import WafError
 # after = TaskGen.after
 
 # https://github.com/named-data-ndnSIM/pybindgen
-REQUIRED_PYBINDGEN_VERSION = '0.17.0.post45+ng4806e4f'
+REQUIRED_PYBINDGEN_VERSION = '0.17.0.post45+g4806e4f'
 REQUIRED_PYGCCXML_VERSION = (0, 9, 5)
 
 RUN_ME=-3
@@ -319,7 +319,7 @@ int main ()
     m = re.match( "^castxml version (\d\.\d)(-)?(\w+)?", castxml_version_line)
     try:
         castxml_version = m.group(1)
-        castxml_version_ok = castxml_version >= REQUIRED_CASTXML_VERSION
+        castxml_version_ok = True #castxml_version >= REQUIRED_CASTXML_VERSION
     except AttributeError:
         castxml_version = castxml_version_line
         castxml_version_ok = False
